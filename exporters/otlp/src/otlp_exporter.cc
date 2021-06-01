@@ -111,7 +111,7 @@ sdk::common::ExportResult OtlpExporter::Export(
 
   if (!status.ok())
   {
-    std::cerr << "[OTLP Exporter] Export() failed: " << status.error_message() << "\n";
+    std::cerr << "[OTLP Exporter] Export() failed: (" << status.error_code() << ") " << status.error_message() << " : " << status.error_details() << "\n";
     return sdk::common::ExportResult::kFailure;
   }
   return sdk::common::ExportResult::kSuccess;
